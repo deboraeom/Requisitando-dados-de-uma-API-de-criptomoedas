@@ -38,13 +38,16 @@
          //console.log(api);
          var texto = "";
          for(let i = 0;i<10; i++){
+             var d = (api.data[i].first_historical_data).split("T");
+             var d1= d[0].split("-");
+             var data = d1[2]+"-"+ d1[1] +"-"+ d1[0]
               texto = texto +`
               <div class="media">
                         <img src="coin.jpg" class="align-self-center mr-3" alt="coin" width="166" height="100">
                         <div class="media-body">
                         <h5 class="mt-2">${api.data[i].name}</h5>
                         <p>${api.data[i].symbol}</p>
-                        <p>${api.data[i].first_historical_data}</p>
+                        <p>${data}</p>
 
                         </div>
                 </div>`
